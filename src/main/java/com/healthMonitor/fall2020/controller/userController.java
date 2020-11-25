@@ -20,7 +20,7 @@ public class userController {
     @Autowired
     UserService userService;
 
-    @ApiOperation("User Registeration")
+    @ApiOperation("User Registration")
     @PostMapping("/registerUser")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "email", value = "user email",

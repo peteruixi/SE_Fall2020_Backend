@@ -2,6 +2,7 @@ package com.healthMonitor.fall2020.service;
 
 import com.healthMonitor.fall2020.domain.UserInfo;
 import com.healthMonitor.fall2020.orm.IDataDao;
+import com.healthMonitor.fall2020.orm.Page;
 import org.apache.tomcat.jni.Local;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -31,8 +32,12 @@ public class UserInfoService extends BaseService{
         return iDao.update(userInfo);
     }
 
-    public UserInfo getUserInfo(String userID){
+    public UserInfo getUserInfoObj(String userID){
         UserInfo userInfo = iDao.getBySql("SELECT * FROM userInfoTable WHERE userId = ?",UserInfo.class,userID);
         return userInfo;
+    }
+    public Page getUserInfoPage(Page page, String userID){
+        iDao.queryMap(page ,"SELECT * FROM userInfoTable WHERE userId = ?",userID);
+        return page;
     }
 }

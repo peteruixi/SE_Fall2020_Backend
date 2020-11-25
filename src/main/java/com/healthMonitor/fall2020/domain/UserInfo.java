@@ -23,8 +23,8 @@ public class UserInfo implements Serializable {
     @Column(name = "userId")
     private String userID;
 
-    @Column(name = "coordinates")
-    private String coordinates;
+    @Column(name = "state")
+    private String state;
 
     @Column(name = "age")
     private String age;
@@ -66,12 +66,12 @@ public class UserInfo implements Serializable {
         this.userID = userID;
     }
 
-    public String getCoordinates() {
-        return coordinates;
+    public String getState() {
+        return state;
     }
 
-    public void setCoordinates(String coordinates) {
-        this.coordinates = coordinates;
+    public void setState(String state) {
+        this.state = state;
     }
 
     public String getAge() {
