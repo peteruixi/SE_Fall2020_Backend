@@ -12,10 +12,14 @@
 	<artifactId>fall2020</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>healthMonitor</name>
+	<packaging>jar</packaging>
 	<description>Health Monitoring App Fall 2020</description>
+
+
 
 	<properties>
 		<java.version>1.8</java.version>
+		<skipTests>true</skipTests>
 	</properties>
 
 	<dependencies>
@@ -111,5 +115,6 @@
 			</plugin>
 		</plugins>
 	</build>
+
 
 </project>

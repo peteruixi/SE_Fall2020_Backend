@@ -8,8 +8,7 @@ import org.springframework.web.filter.CorsFilter;
 
 /**
  *
- * Create on 2017年7月6日下午8:05:19
- * All right reserved
+ *
  */
 @Configuration
 public class CorsConfig {

@@ -1,5 +1,5 @@
 server:
-  port: 8082
+  port: 5000
   servlet:
     context-path: /api
 spring:
@@ -7,6 +7,9 @@ spring:
     url: jdbc:mysql://localhost:3306/healthMonitoring?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
     username: root
     password: root
+#    url: jdbc:mysql://softwareengineeringdb.cqnrfa9hmizc.us-east-2.rds.amazonaws.com:3306/healthapp?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+#    username: admin
+#    password: adminadmin
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 # 日志配置

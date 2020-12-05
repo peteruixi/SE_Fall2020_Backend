@@ -21,6 +21,9 @@ public class DeviceService extends BaseService {
         Device device = new Device();
         UserDeviceRelation deviceRelation = new UserDeviceRelation();
         String deviceId = IDTool.NewID();
+        deviceRelation.setStatus(1);
+
+
         device.setDeviceId(deviceId);
         device.setDeviceName(deviceName);
         device.setDeviceType(deviceType);

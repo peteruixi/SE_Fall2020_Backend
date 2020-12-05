@@ -2,6 +2,7 @@ package com.healthMonitor.fall2020.controller;
 
 import com.healthMonitor.fall2020.domain.Record;
 import com.healthMonitor.fall2020.dto.CommResponse;
+import com.healthMonitor.fall2020.filter.NeedToken;
 import com.healthMonitor.fall2020.orm.Page;
 import com.healthMonitor.fall2020.service.DeviceRecordService;
 import io.swagger.annotations.Api;
@@ -27,6 +28,7 @@ public class deviceRecordController {
 
 
     @ApiOperation("Create Record of Data From Device")
+    @NeedToken
     @PostMapping("/createRecord")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "deviceId", value = "device Id",
@@ -56,6 +58,7 @@ public class deviceRecordController {
     }
 
     @ApiOperation("Get Record List")
+    @NeedToken
     @GetMapping("/getRecordList")
     public CommResponse getRecordList(Page page, HttpServletRequest request){
         CommResponse commResponse = new CommResponse();

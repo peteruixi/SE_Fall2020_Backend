@@ -1,18 +1,13 @@
 package com.healthMonitor.fall2020.service;
 
-import com.fasterxml.jackson.databind.ser.Serializers;
 import com.healthMonitor.fall2020.domain.User;
 import com.healthMonitor.fall2020.domain.UserInfo;
 import com.healthMonitor.fall2020.orm.IDataDao;
 import com.healthMonitor.fall2020.utils.IDTool;
-import org.apache.tomcat.jni.Local;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.Date;
 
 
@@ -44,4 +39,8 @@ public class UserService extends BaseService {
 
     }
 
+    public String getUserId(String email, String password) {
+
+        return iDao.uniqueResult("SELECT userId FROM userTable WHERE email = ? and password =?",email,password);
+    }
 }

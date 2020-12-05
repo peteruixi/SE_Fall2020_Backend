@@ -2,6 +2,7 @@ package com.healthMonitor.fall2020.controller;
 
 import com.healthMonitor.fall2020.domain.UserInfo;
 import com.healthMonitor.fall2020.dto.CommResponse;
+import com.healthMonitor.fall2020.filter.NeedToken;
 import com.healthMonitor.fall2020.orm.Page;
 import com.healthMonitor.fall2020.service.UserInfoService;
 import io.swagger.annotations.Api;
@@ -20,12 +21,13 @@ import java.util.HashMap;
 
 @Api(tags = "userinfo management")
 @RestController
-@RequestMapping("userinfo")
+@RequestMapping("/userinfo")
 public class userInfoController {
     @Autowired
     UserInfoService userInfoService;
 
     @ApiOperation("Modify Userinfo")
+    @NeedToken
     @PostMapping("/updateUserInfo")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "state", value = "user physical location",
@@ -43,8 +45,8 @@ public class userInfoController {
         //UserInfo userInfo = new UserInfo();
         CommResponse commResponse = new CommResponse();
 
-//        String userId = (String) request.getSession().getAttribute("userId");
-        String userId = "19bff1a99bd84e2b963f37f65cf4d77b";
+        String userId = (String) request.getSession().getAttribute("userId");
+        //String userId = "19bff1a99bd84e2b963f37f65cf4d77b";
         UserInfo oldUserInfo = userInfoService.getUserInfoObj(userId);
         if(state !=null) oldUserInfo.setState(state);
         if(age != null) oldUserInfo.setAge(age);
@@ -65,11 +67,12 @@ public class userInfoController {
     }
 
     @ApiOperation("Get Userinfo")
+    @NeedToken
     @GetMapping("/getUserInfo")
     public CommResponse getUserInfo(HttpServletRequest request, Page page){
         CommResponse commResponse = new CommResponse();
-        //String userId = (String) request.getSession().getAttribute("userId");
-        String userId = "19bff1a99bd84e2b963f37f65cf4d77b";
+        String userId = (String) request.getSession().getAttribute("userId");
+        //String userId = "19bff1a99bd84e2b963f37f65cf4d77b";
         page = userInfoService.getUserInfoPage(page,userId);
         commResponse.data.put("data",page);
         return commResponse;
