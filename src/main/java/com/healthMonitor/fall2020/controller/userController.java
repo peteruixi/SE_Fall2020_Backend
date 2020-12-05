@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Scanner;
+
 @Api(tags="user management")
 @RestController
 @RequestMapping("user")
@@ -30,11 +32,22 @@ public class userController {
             @ApiImplicitParam(name = "password", value = "user password",
                     required = true, paramType = "query"),
             @ApiImplicitParam(name = "userType", value = "0:admin 1:regular user",
-                    required = true, paramType = "query")
+                    required = false, paramType = "query")
     })
-    public CommResponse registerUser(User user){
+    public CommResponse registerUser(User user,String userType){
         CommResponse commResponse = new CommResponse();
         user.setUserId(IDTool.NewID());
+        if(userService.checkEmail(user.getEmail())==false){
+            commResponse.setCode(0);
+            commResponse.setMsg("Please Input Valid Email Address");
+        }
+        if(userType==null){ //userType.equals("")||
+            user.setUserType(1);
+
+        }
+        else{
+            user.setUserType(Integer.parseInt(userType));
+        }
         int ret = userService.createUser(user);
         if (ret==0){
             commResponse.setCode(0);
@@ -81,6 +94,7 @@ public class userController {
         }
         return commResponse;
     }
+
 
 
 }

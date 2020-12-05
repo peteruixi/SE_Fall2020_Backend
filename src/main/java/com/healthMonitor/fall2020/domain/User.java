@@ -28,6 +28,7 @@ public class User implements Serializable {
     private String password;
 
     @Column(name = "userType")
+    @ApiModelProperty(hidden = true)
     private int userType;
 
     @Column(name = "status")

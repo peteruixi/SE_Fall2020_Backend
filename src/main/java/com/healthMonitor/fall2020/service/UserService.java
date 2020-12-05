@@ -9,6 +9,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 @Service
@@ -19,6 +22,18 @@ public class UserService extends BaseService {
 
     @Autowired
     UserInfoService userInfoService;
+
+    public static boolean checkEmail(String email) {
+        try {
+            String check = "([a-z0-9A-Z]+[-|\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]{2,}";
+            Pattern regex = Pattern.compile(check);
+            Matcher matcher = regex.matcher(email);
+            return matcher.matches();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
 
     public int createUser(User user){
         user.setStatus(1);
