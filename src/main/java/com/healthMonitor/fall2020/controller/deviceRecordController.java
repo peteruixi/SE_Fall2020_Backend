@@ -60,12 +60,12 @@ public class deviceRecordController {
     @ApiOperation("Get Record List")
     @NeedToken
     @GetMapping("/getRecordList")
-    public CommResponse getRecordList(Page page, HttpServletRequest request){
+    public CommResponse getRecordList(Page page, HttpServletRequest request, String deviceId){
         CommResponse commResponse = new CommResponse();
-        //String userId = (String)request.getSession().getAttribute("userId");
-        String userId = "19bff1a99bd84e2b963f37f65cf4d77b";
+        String userId = (String)request.getSession().getAttribute("userId");
+        //String userId = "19bff1a99bd84e2b963f37f65cf4d77b";
 //        DeviceRecordService.getRelation(userId);
-        String deviceId = "ae2d762039264cbdb192aa3b9d57a579";
+        //String deviceId = "ae2d762039264cbdb192aa3b9d57a579";
         page = deviceRecordService.getRecordList(page,userId, deviceId);
         commResponse.data.put("data",page);
         return commResponse;

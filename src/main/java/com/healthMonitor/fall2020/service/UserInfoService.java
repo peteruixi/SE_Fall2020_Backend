@@ -23,7 +23,8 @@ public class UserInfoService extends BaseService{
     }
     public int modifyUserInfo(String userId, UserInfo userInfo){
         if(userInfo.getHeight()!=null && userInfo.getWeight() != null && userInfo.getAge()!=null) {
-            double BMI = Double.parseDouble(userInfo.getWeight()) / Math.pow((Double.parseDouble(userInfo.getWeight())/100), 2);
+            //System.out.println();
+            double BMI = Double.parseDouble(userInfo.getWeight()) / Math.pow((Double.parseDouble(userInfo.getHeight())/100), 2);
             DecimalFormat decimalFormat = new DecimalFormat("###.##");
             userInfo.setBMI(String.valueOf(decimalFormat.format(BMI)));
         }

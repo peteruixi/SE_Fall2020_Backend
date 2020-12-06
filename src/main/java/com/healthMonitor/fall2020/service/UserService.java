@@ -58,4 +58,19 @@ public class UserService extends BaseService {
 
         return iDao.uniqueResult("SELECT userId FROM userTable WHERE email = ? and password =?",email,password);
     }
+    public boolean getUser(User user) {
+        User ret;
+        try {
+            ret = iDao.get(User.class, "WHERE email = ?", user.getEmail());
+        }
+        catch (Exception e){
+            return true;
+        }
+       if(ret==null){
+           return true;
+       }
+       else{
+           return false;
+       }
+    }
 }

@@ -37,13 +37,18 @@ public class userController {
     public CommResponse registerUser(User user,String userType){
         CommResponse commResponse = new CommResponse();
         user.setUserId(IDTool.NewID());
-        if(userService.checkEmail(user.getEmail())==false){
+        if(!userService.checkEmail(user.getEmail())){
             commResponse.setCode(0);
             commResponse.setMsg("Please Input Valid Email Address");
+            return commResponse;
+        }
+        if(!userService.getUser(user)){
+            commResponse.setCode(0);
+            commResponse.setMsg("This email address has been used");
+            return commResponse;
         }
         if(userType==null){ //userType.equals("")||
             user.setUserType(1);
-
         }
         else{
             user.setUserType(Integer.parseInt(userType));
