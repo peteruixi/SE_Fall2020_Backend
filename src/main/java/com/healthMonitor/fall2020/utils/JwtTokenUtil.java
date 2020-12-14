@@ -11,6 +11,12 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+Written by: Ruixi Li
+Tested by: Ruixi Li
+Debugged by: Ruixi Li
+ */
+
 @Component
 public class JwtTokenUtil implements Serializable {
     public static  void main(String [] args)

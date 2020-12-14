@@ -10,8 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
 import java.lang.reflect.Method;
 
-/**
- *
+/*
+Written by: Ruixi Li
+Tested by: Ruixi Li
+Debugged by: Ruixi Li
  */
 public class AuthenticationInterceptor implements HandlerInterceptor {
 

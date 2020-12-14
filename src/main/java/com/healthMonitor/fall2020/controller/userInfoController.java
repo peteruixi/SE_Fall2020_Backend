@@ -19,6 +19,12 @@ import javax.servlet.http.HttpServletRequest;
 import java.text.DecimalFormat;
 import java.util.HashMap;
 
+/*
+Written by: Ruixi Li
+Tested by: Ruixi Li
+Debugged by: Ruixi Li
+ */
+
 @Api(tags = "userinfo management")
 @RestController
 @RequestMapping("/userinfo")

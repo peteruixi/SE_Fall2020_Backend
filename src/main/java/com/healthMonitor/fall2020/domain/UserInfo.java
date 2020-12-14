@@ -9,9 +9,12 @@ import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * @Author Ruixi Li
+/*
+Written by: Ruixi Li
+Tested by: Ruixi Li
+Debugged by: Ruixi Li
  */
+
 @Data
 @Table(name = "userInfoTable")
 public class UserInfo implements Serializable {

@@ -4,6 +4,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+/*
+Written by: Ruixi Li
+Tested by: Ruixi Li
+Debugged by: Ruixi Li
+ */
+
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
@@ -21,6 +27,5 @@ public class WebConfig implements WebMvcConfigurer {
                 .allowedHeaders("*")
 					.maxAge(3600 * 24);
 
-        //响应头明显就没包含Access-Control-Allow-Origin：*，跨域了肯定报错了
     }
 }

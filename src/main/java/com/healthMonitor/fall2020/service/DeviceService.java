@@ -11,6 +11,12 @@ import org.springframework.stereotype.Service;
 
 import java.util.*;
 
+/*
+Written by: Ruixi Li
+Tested by: Ruixi Li
+Debugged by: Ruixi Li
+ */
+
 @Service
 public class DeviceService extends BaseService {
     @Autowired

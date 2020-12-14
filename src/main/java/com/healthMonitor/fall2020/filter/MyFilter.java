@@ -8,6 +8,12 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.Date;
 
+/*
+Written by: Ruixi Li
+Tested by: Ruixi Li
+Debugged by: Ruixi Li
+ */
+
 @Order(1)
 @WebFilter(urlPatterns = "/*",filterName = "MyFilter")
 public class MyFilter implements Filter {

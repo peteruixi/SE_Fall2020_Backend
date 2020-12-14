@@ -6,6 +6,12 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/*
+Written by: Ruixi Li
+Tested by: Ruixi Li
+Debugged by: Ruixi Li
+ */
+
 @Data
 @Table(name ="userDeviceRelationTable")
 public class UserDeviceRelation {

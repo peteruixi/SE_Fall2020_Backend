@@ -11,6 +11,12 @@ import org.springframework.stereotype.Service;
 import java.text.DecimalFormat;
 import java.util.Date;
 
+/*
+Written by: Ruixi Li
+Tested by: Ruixi Li
+Debugged by: Ruixi Li
+ */
+
 @Service
 public class UserInfoService extends BaseService{
     @Autowired

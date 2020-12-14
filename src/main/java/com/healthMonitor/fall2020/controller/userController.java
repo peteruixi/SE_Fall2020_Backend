@@ -17,6 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Scanner;
 
+/*
+Written by: Ruixi Li
+Tested by: Ruixi Li
+Debugged by: Ruixi Li
+ */
+
 @Api(tags="user management")
 @RestController
 @RequestMapping("user")

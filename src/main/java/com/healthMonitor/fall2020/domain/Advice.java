@@ -7,6 +7,12 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Date;
 
+/*
+Written by: Ruixi Li
+Tested by: Ruixi Li
+Debugged by: Ruixi Li
+ */
+
 @Data
 @Table(name = "adviceTable" )
 public class Advice {

@@ -17,6 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 
+/*
+Written by: Ruixi Li
+Tested by: Ruixi Li
+Debugged by: Ruixi Li
+ */
+
 @Api(tags = "device data management")
 @RestController
 @RequestMapping("deviceData")

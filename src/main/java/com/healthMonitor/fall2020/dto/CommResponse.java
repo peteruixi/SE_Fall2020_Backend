@@ -8,9 +8,12 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author Ruixi Li
+/*
+Written by: Ruixi Li
+Tested by: Ruixi Li
+Debugged by: Ruixi Li
  */
+
 @Data
 public class CommResponse implements Serializable {
     public int code=1;

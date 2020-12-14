@@ -5,8 +5,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-/**
- * @author zhenshijun
+/*
+Written by: Ruixi Li , zhenshijun (my boss from my internship)
+Tested by: Ruixi Li
+Debugged by: Ruixi Li
  */
 @Configuration
 public class InterceptorConfig implements WebMvcConfigurer {
